@@ -93,6 +93,12 @@
   </div>
   <!-- End of Newsletter form -->
 
+  <style>
+    .text-muted.text-left img {
+      height: 80px;
+      width: 80px;
+    }
+  </style>
   <!-- Box within partners name and logo -->
   <?php
   // Llamo al partial asociados para crear la lista de Asociados

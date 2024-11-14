@@ -3,19 +3,29 @@
 // print $categoriaActiva . ' ';
 // print_r($arrayImagenes);
 ?>
+<!-- Estilo css para dar un alto especifico a las imagenes para que tengas diferentes tamañoes entre ellas -->
+<style>
+    .sol {
+        height: 200px;
+    }
 
-    <?php
-    echo '<div id=' . $idCategoria . ' class="tab-pane ' . $categoriaActiva . '">';
-    echo '<div class="row popup-gallery">';
-    foreach ($arrayImagenes as $imagen) {
-        echo '<div class="col-xs-12 col-sm-6 col-md-3">
+    .sol img {
+        height: 100%;
+        width: 100%;
+    }
+</style>
+<?php
+echo '<div id=' . $idCategoria . ' class="tab-pane ' . $categoriaActiva . '">';
+echo '<div class="row popup-gallery">';
+foreach ($arrayImagenes as $imagen) {
+    echo '<div class="col-xs-12 col-sm-6 col-md-3">
         <div class="sol">
             <img class="img-responsive" src=' . $imagen->getUrlPortafolio() . ' alt=' . $imagen->getDescripcion() . ' width="450">
             <div class="behind">
                 <div class="head text-center">
                     <ul class="list-inline">
                         <li>
-                            <a class="gallery" href='. $imagen->getUrlGallery() .' data-toggle="tooltip" data-original-title="Quick View">
+                            <a class="gallery" href=' . $imagen->getUrlGallery() . ' data-toggle="tooltip" data-original-title="Quick View">
                                 <i class="fa fa-eye"></i>
                             </a>
                         </li>
@@ -46,8 +56,8 @@
             </div>
         </div>
     </div>';
-    }
-    echo '</div>';
-    echo '</div>';
+}
+echo '</div>';
+echo '</div>';
 
-    ?>
+?>

@@ -1,9 +1,11 @@
 <?php
-require "utils/utils.php";
-require "entities/ImagenGaleria.class.php";
-require "entities/partners.class.php";
+require_once "utils/utils.php";
+require_once "entities/ImagenGaleria.class.php";
+require_once "entities/Asociados.class.php";
+require_once "entities/partners.class.php";
 
 require_once 'repository/ImagenGalariaRepository.class.php';
+require_once 'repository/asociadosRepository.class.php';
 require_once 'entities/connection.class.php';
 
 
@@ -21,15 +23,14 @@ foreach ($arrayImagenesRepository as $imagen) {
 
 // For para crear seis Asociados
 
-$arrayNombreAsociados = ["Miguel Ángel Fernández", "Fernando García", "Antonio Pérez", "Ana Fernández ", "Ramon López ", "Sara Martínez"];
-$num = 1;
-for ($i = 0; $i < 6; $i++) {
-    $arrayPartners[] = new Partners($arrayNombreAsociados[$i], "images/index/log" . $num . ".jpg", " Asociado " . ($i + 1));
-    if ($num >= 3) {
-        $num = 1;
-    } else {
-        $num++;
-    }
+
+$config = require_once 'app/config.php';
+App::bind('config', $config);
+$asociados = new AsociadosRepository();
+$arrayAsociados = $asociados->findAll();
+
+foreach ($arrayAsociados as $asociado) {
+    $arrayPartners[] = $asociado;;
 }
 
 require "views/index.view.php";
