@@ -41,11 +41,18 @@
       <!-- First Category pictures -->
       <!-- Llamo al partial imageGaleria y declaro 3 variables para crear un galeria de imagenes en la página web, ente proceso lo repito 3 veces -->
       <?php
-      $idCategoria = 'category1';
-      $categoriaActiva = 'active';
-      shuffle($arrayImagenes);
+      if ($arrayVacioImagenes == true) {
+        print "<h1>Error, no hay imagenes en la categoria 1</h1>";
+      } else {
+        $idCategoria = 'category1';
+        $categoriaActiva = 'active';
+        shuffle($arrayImagenes);
 
-      include __DIR__ . '/partials/imagegallery.part.php'
+        include __DIR__ . '/partials/imagegallery.part.php';
+      }
+
+
+
       ?>
 
       <!-- End of First category pictures -->
@@ -53,11 +60,19 @@
       <!--second category pictures -->
 
       <?php
-      $idCategoria = 'category2';
-      $categoriaActiva = '';
-      shuffle($arrayImagenes);
 
-      include __DIR__ . '/partials/imagegallery.part.php'
+      if ($arrayVacioImagenes == true) {
+        print "<h1>Error, no hay imagenes en la categoria 2</h1>";
+      } else {
+        $idCategoria = 'category2';
+        $categoriaActiva = '';
+        shuffle($arrayImagenes);
+
+        include __DIR__ . '/partials/imagegallery.part.php';
+      }
+
+
+
       ?>
 
       <!-- End of second category pictures -->
@@ -65,11 +80,16 @@
       <!-- Third Category Pictures -->
 
       <?php
-      $idCategoria = 'category3';
-      $categoriaActiva = '';
-      shuffle($arrayImagenes);
 
-      include __DIR__ . '/partials/imagegallery.part.php'
+      if ($arrayVacioImagenes == true) {
+        print "<h1>Error, no hay imagenes en la categoria 3</h1>";
+      } else {
+        $idCategoria = 'category3';
+        $categoriaActiva = '';
+        shuffle($arrayImagenes);
+
+        include __DIR__ . '/partials/imagegallery.part.php';
+      }
       ?>
 
       <!-- Third Category Pictures -->
