@@ -1,9 +1,10 @@
 <?php
+// Fichero en el cual almaceno los mensajes de errores del proyecto
 define('ERROR_MV_UP_FILE', 9);
 define('ERROR_EXECUTE_STATEMENT', 10);
-define('ERROR_APP_CORE',11);
-define('ERROR_CON_BD',12);
-define('ERROR_INSERT_BD',13);
+define('ERROR_APP_CORE', 11);
+define('ERROR_CON_BD', 12);
+define('ERROR_INSERT_BD', 13);
 
 $errorStrings[UPLOAD_ERR_OK] = "No hay ningun error.";
 $errorStrings[UPLOAD_ERR_INI_SIZE] = "El fichero es demasiado grande.";

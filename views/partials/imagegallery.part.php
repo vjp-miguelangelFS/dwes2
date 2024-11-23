@@ -1,8 +1,5 @@
-<?php
-// print $idCategoria . ' ';
-// print $categoriaActiva . ' ';
-// print_r($arrayImagenes);
-?>
+<!-- Partial con la galeria de imagenes de la página web Home -->
+
 <!-- Estilo css para dar un alto especifico a las imagenes para que tengas diferentes tamañoes entre ellas -->
 <style>
     .sol {
@@ -15,8 +12,11 @@
     }
 </style>
 <?php
+// Creo el código html para mostrar por pantalla la galeria de imagenes utilizando el array $arrayImagenes
+// que almacena las imagenes de la base de datos en el fichero index.php
 echo '<div id=' . $idCategoria . ' class="tab-pane ' . $categoriaActiva . '">';
 echo '<div class="row popup-gallery">';
+// Creo un div para cada una de las imagenes del array $arrayImagenes que consigo de la base de datos
 foreach ($arrayImagenes as $imagen) {
     echo '<div class="col-xs-12 col-sm-6 col-md-3">
         <div class="sol">

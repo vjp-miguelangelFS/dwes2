@@ -1,3 +1,6 @@
+<!-- View de la página single_post -->
+
+<!-- Llamo a los partial con el head y nav de la página web-->
 <?php include __DIR__ . '/partials/inicio-doc.part.php' ?>
 
 <?php include __DIR__ . '/partials/nav.part.php' ?>
@@ -140,4 +143,5 @@
   </div>
 </footer>
 
+<!-- Llamo al partial con el los script de la página -->
 <?php include __DIR__ . '/partials/fin-doc.part.php' ?>

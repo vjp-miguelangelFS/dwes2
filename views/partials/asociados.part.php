@@ -1,3 +1,4 @@
+<!-- Partial con el apartado de los asociados -->
 <div class="last-box row">
     <div class="col-xs-12 col-sm-4 col-sm-push-4 last-block">
         <div class="partner-box text-center">
@@ -21,7 +22,6 @@
                             $arrayMostrarPartner = extraerTresAsociados($arrayPartners);
                         }
                     }
-                    // print_r($arrayMostrarPartner);
                     // Muestro por pantalla los Asociados
                     foreach ($arrayMostrarPartner as $partner) {
                         print "<ul class='list-inline'>
@@ -30,8 +30,6 @@
                         </ul>";
                     }
                 }
-
-
                 ?>
             </div>
         </div>

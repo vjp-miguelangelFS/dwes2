@@ -1,10 +1,12 @@
+<!-- Partial del head de los ficheros View -->
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-	  <title>PhotographItem-Responsive Theme | Blog</title>
+    <title>PhotographItem-Responsive Theme | Blog</title>
 
     <!-- Bootstrap core css -->
     <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
@@ -20,4 +22,5 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 </head>
+
 <body id="page-top">

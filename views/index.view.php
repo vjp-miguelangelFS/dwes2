@@ -1,3 +1,6 @@
+<!-- View de la página home -->
+
+<!-- Llamo a los partials que contiene el head y el nav de la página -->
 <?php include __DIR__ . '/partials/inicio-doc.part.php' ?>
 
 <?php include __DIR__ . '/partials/nav.part.php' ?>
@@ -58,7 +61,7 @@
       <!-- End of First category pictures -->
 
       <!--second category pictures -->
-
+      <!-- Segunda categoria  -->
       <?php
 
       if ($arrayVacioImagenes == true) {
@@ -78,7 +81,7 @@
       <!-- End of second category pictures -->
 
       <!-- Third Category Pictures -->
-
+      <!-- Tercera categoria  -->
       <?php
 
       if ($arrayVacioImagenes == true) {
@@ -148,5 +151,5 @@
     </div>
   </div>
 </footer>
-
+<!-- Llamo al partial con los scripts finales de la página -->
 <?php include __DIR__ . '/partials/fin-doc.part.php' ?>

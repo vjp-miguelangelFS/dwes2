@@ -1,5 +1,7 @@
 <?php
-    return ['database' =>[
+// Devulve la información necesaria para conectarse a la base de datos
+return [
+    'database' => [
         'name' => 'proyecto',
         'username' => 'userProyecto',
         'password' => 'userProyecto',
@@ -10,5 +12,4 @@
             PDO::ATTR_PERSISTENT => true
         ]
     ]
-    ];
-?>
+];

@@ -1,4 +1,5 @@
 <?php
+// Require necesarios para el funcionamiento de la pagina
 require_once "utils/utils.php";
 require_once "entities/ImagenGaleria.class.php";
 require_once "entities/Asociados.class.php";
@@ -25,17 +26,14 @@ if (count($arrayImagenesRepository) == 0) {
     }
 }
 
-
-
-// For para crear seis Asociados
-
-// Boolean para comprobar que el arrayAsociados no este vacio para que no ocurra ningun error.
+// Codig para conseguir los asociados de la base de dato
 $arrayVacioAsociados = false;
 
 $config = require_once 'app/config.php';
 App::bind('config', $config);
 $asociados = new AsociadosRepository();
 $arrayAsociados = $asociados->findAll();
+// If para comprobar si se tiene que ordenar aleatoriamente los asociados o mostrar los tres primeros
 if (count($arrayAsociados) == 0) {
     $arrayVacioAsociados = true;
 } else {
@@ -44,5 +42,5 @@ if (count($arrayAsociados) == 0) {
     }
 }
 
-
+// Llamo a index view
 require "views/index.view.php";
