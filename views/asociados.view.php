@@ -1,3 +1,5 @@
+<!-- Llamo a los partials que contienen el head y el nav de la página web -->
+
 <?php include __DIR__ . '/partials/inicio-doc.part.php' ?>
 
 <?php include __DIR__ . '/partials/nav.part.php' ?>
@@ -7,7 +9,7 @@
         <div class="col-xs-12 col-sm-8 col-sm-push-2">
             <h1>Asociados</h1>
             <hr>
-
+            <!-- Código php que muestra los errores de la página galeria -->
             <?php if ($_SERVER['REQUEST_METHOD'] === 'POST') : ?>
 
                 <div class="alert alert-<?= empty($errores) ? 'info' : 'danger'; ?> alert-dismissibre" role="alert">
@@ -60,6 +62,8 @@
                         </tr>
                     </thead>
                     <tbody>
+                        <!-- Código que crea las filas de las tablas de la tabla de galeria utilizando la varialbe $asociado
+                         que almacena  las imagenes de la base de datos en el fichero asociado.php-->
                         <?php foreach ($asociados as $asociado): ?>
                             <tr>
                                 <th scope="row"><?= $asociado->getId() ?></th>
@@ -77,4 +81,5 @@
     </div>
 </div>
 <!-- Principal Content Start -->
+<!-- Patial que contiene los scripts finales de la página -->
 <?php include 'partials/fin-doc.part.php' ?>

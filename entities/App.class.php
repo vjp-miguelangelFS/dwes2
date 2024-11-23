@@ -1,20 +1,33 @@
 <?php
+// Requires necesarios para el funcionamiento de la clase
 require_once 'exceptions/AppException.class.php';
 require_once 'utils/const.php';
 class App
 {
 
     /**
-     *
+     * Array estacico $container
      * @var array
      */
     private static $container = [];
 
+    /**
+     * Se encarga de asociar una clave/key con un contenido para posteriormente llamar a la clave y te proporcioene el contenido
+     *
+     * @param [type] $clave
+     * @param [type] $valor
+     * @return void
+     */
     public static function bind($clave, $valor)
     {
         static::$container[$clave] = $valor;
     }
-
+    /**
+     * Te permite acceder al contenido de la varialbe static $container
+     *
+     * @param string $key
+     * @return void
+     */
     public static function get(string $key)
     {
         if (!array_key_exists($key, static::$container)) {
@@ -22,9 +35,14 @@ class App
         }
         return static::$container[$key];
     }
-
-    public static function getConnection(){
-        if(!array_key_exists('connection',static::$container)){
+    /**
+     * Contrala la creación de una conexión en caso de que exista devilvera una conexión, y en caso de que no exista una conexión la creara
+     *
+     * @return void
+     */
+    public static function getConnection()
+    {
+        if (!array_key_exists('connection', static::$container)) {
             static::$container['connection'] = Connection::make();
         }
         return static::$container['connection'];

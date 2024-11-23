@@ -8,7 +8,7 @@ require_once 'Categoria.class.php';
 abstract class QuerryBuilder
 {
     // Variables necesarias para el funcionamiento de la clase
-    private $connection;
+    private PDO $connection;
 
     private $table;
 
@@ -16,7 +16,9 @@ abstract class QuerryBuilder
 
     /**
      * Constructor de la clase QuerryBuilder
-     * @param PDO $connection
+     *
+     * @param string $table
+     * @param string $classEntity
      */
     public function __construct(string $table, string $classEntity)
     {

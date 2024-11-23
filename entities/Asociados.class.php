@@ -1,16 +1,25 @@
 <?php
+// Llamo a la interfaz IEntity
 require_once 'database/IEntity.class.php';
+// Clase Asociados que implementa la interfaz IEntity
 class Asociados implements IEntity
 {
+    // Constantes con las ruta de las carpeta logo
     const RUTA_LOGO = 'images/logo/';
 
+    // Variable necesarias para la clase
     private $id;
     private $nombre;
     private $log;
     private $descripcion;
 
-
-
+    /**
+     * Constructor de la clase Asociados
+     *
+     * @param string $nombre
+     * @param string $log
+     * @param string $descripcion
+     */
     public function __construct($nombre = '', $log = '', $descripcion = '')
     {
         $this->nombre = $nombre;
@@ -18,7 +27,7 @@ class Asociados implements IEntity
         $this->descripcion = $descripcion;
         $this->id = null;
     }
-
+    // Getters y Setters de la clase Asociados
     public function getId()
     {
         return $this->id;
@@ -59,6 +68,12 @@ class Asociados implements IEntity
         return self::RUTA_LOGO . $this->getLogo();
     }
 
+    /**
+     * Función toArray convierte un Objeto en un array asociativo 
+     * donde las claves corresponden a los nombres de las propiedades del objeto y los valores son los datos de esas propiedades.
+     *
+     * @return array
+     */
     public function toArray(): array
     {
         return [

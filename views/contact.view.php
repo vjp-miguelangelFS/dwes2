@@ -1,3 +1,4 @@
+<!-- Llamo a los partials que contienen el head y el nav de la página web -->
 <?php include __DIR__ . '/partials/inicio-doc.part.php' ?>
 
 <?php include __DIR__ . '/partials/nav.part.php' ?>
@@ -11,6 +12,7 @@
 			<p>Aut eaque, laboriosam veritatis, quos non quis ad perspiciatis, totam corporis ea, alias ut unde.</p>
 
 			<?php
+			// Muestra los errores de la página contact
 			if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 				if (empty($arrayErrores)) {
 					echo '<div class= "alert alert-info">';
@@ -91,5 +93,5 @@
 	</div>
 </div>
 <!-- Principal Content Start -->
-
+<!-- Patial que contiene los scripts finales de la página -->
 <?php include __DIR__ . '/partials/fin-doc.part.php' ?>

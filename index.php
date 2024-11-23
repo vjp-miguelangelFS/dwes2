@@ -3,7 +3,6 @@
 require_once "utils/utils.php";
 require_once "entities/ImagenGaleria.class.php";
 require_once "entities/Asociados.class.php";
-require_once "entities/partners.class.php";
 
 require_once 'repository/ImagenGalariaRepository.class.php';
 require_once 'repository/asociadosRepository.class.php';

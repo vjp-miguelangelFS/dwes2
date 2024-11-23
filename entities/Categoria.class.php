@@ -1,17 +1,27 @@
 <?php
+// Llamo a la interfaz IEntity
 require_once 'database/IEntity.class.php';
+// Clase Categoria que implementa la interfaz IEntity
 class Categoria implements IEntity
 {
+    // Variable necesarias para la clase
     private $id;
     private $nombre;
     private $numImagenes;
 
+    /**
+     * Constructor de la clase Categoria
+     *
+     * @param string $nombre
+     * @param integer $numImagenes
+     */
     public function __construct(string $nombre = '', int $numImagenes = 0)
     {
         $this->nombre = $nombre;
         $this->numImagenes = $numImagenes;
     }
 
+    // Getters y Setters de la clase Categoria
     public function getId()
     {
         return $this->id;
@@ -42,6 +52,12 @@ class Categoria implements IEntity
         $this->numImagenes = $numImagenes;
     }
 
+    /**
+     * Función toArray convierte un Objeto en un array asociativo 
+     * donde las claves corresponden a los nombres de las propiedades del objeto y los valores son los datos de esas propiedades.
+     *
+     * @return array
+     */
     public function toArray(): array
     {
         return [
