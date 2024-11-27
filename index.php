@@ -10,11 +10,17 @@ require_once 'entities/connection.class.php';
 
 
 // Lo necesario para poder almacenar las imagenes del servidor en la variable $arrayImagenesRepository
-$arrayVacioImagenes = false;
-$config = require_once 'app/config.php';
-App::bind('config', $config);
-$imagenRepositorio = new ImagenGaleriaRepository();
-$arrayImagenesRepository = $imagenRepositorio->findAll();
+try {
+    $arrayVacioImagenes = false;
+    $config = require_once 'app/config.php';
+    App::bind('config', $config);
+    $imagenRepositorio = new ImagenGaleriaRepository();
+} catch (Exception $error) {
+    throw $error;
+} finally {
+    $arrayImagenesRepository = $imagenRepositorio->findAll();
+}
+
 
 // Con foreach añado a una array de imagenes las imagenes que tengo almacenadas en el sevidor
 if (count($arrayImagenesRepository) == 0) {
@@ -26,12 +32,19 @@ if (count($arrayImagenesRepository) == 0) {
 }
 
 // Codig para conseguir los asociados de la base de dato
-$arrayVacioAsociados = false;
+try {
+    $arrayVacioAsociados = false;
 
-$config = require_once 'app/config.php';
-App::bind('config', $config);
-$asociados = new AsociadosRepository();
-$arrayAsociados = $asociados->findAll();
+    $config = require_once 'app/config.php';
+    App::bind('config', $config);
+    $asociados = new AsociadosRepository();
+} catch (Exception $error) {
+    throw $error;
+} finally {
+    $arrayAsociados = $asociados->findAll();
+}
+
+
 // If para comprobar si se tiene que ordenar aleatoriamente los asociados o mostrar los tres primeros
 if (count($arrayAsociados) == 0) {
     $arrayVacioAsociados = true;
