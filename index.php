@@ -31,7 +31,7 @@ if (count($arrayImagenesRepository) == 0) {
     }
 }
 
-// Codig para conseguir los asociados de la base de dato
+// Codigo para conseguir los asociados de la base de dato
 try {
     $arrayVacioAsociados = false;
 
