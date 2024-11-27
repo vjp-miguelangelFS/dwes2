@@ -20,7 +20,7 @@ class App
      */
     public static function bind($clave, $valor)
     {
-        static::$container[$clave] = $valor;
+        self::$container[$clave] = $valor;
     }
     /**
      * Te permite acceder al contenido de la varialbe static $container
