@@ -1,5 +1,5 @@
 <?php
-return [
+$router->define([
     '' => 'app/controllers/index.php',
     'about' => 'app/controllers/about.php',
     'asociados' => 'app/controllers/asociados.php',
@@ -8,5 +8,4 @@ return [
     'galeria' => 'app/controllers/galeria.php',
     'post' => 'app/controllers/single_post.php'
 
-];
-?>
+]);

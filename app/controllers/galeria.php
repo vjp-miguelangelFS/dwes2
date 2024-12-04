@@ -16,7 +16,7 @@ $mensaje = '';
 try {
     // Creo la conexión con la base de datos y
     // creo los obejtos necesarios para poder conseguir las imagenes y las categorias de la bsae de datos
-    
+
     // $config = require_once 'app/config.php';
 
     // App::bind('config', $config);
@@ -61,4 +61,4 @@ try {
     $categorias = $categoriaRepository->findAll();
 }
 
-require __DIR__.'/../views/galeria.view.php';
+require __DIR__ . '/../views/galeria.view.php';
