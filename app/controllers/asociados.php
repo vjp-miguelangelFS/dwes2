@@ -17,9 +17,10 @@ $mensaje = '';
 try {
     // Creo una conexión con la base de datos y crea el objeto AsociadosRepository necesario para almacenar asociados en la base de datos y 
     // para conseguir todos los asociados de la base de datos
-    $config = require_once 'app/config.php';
+    
+    // $config = require_once 'app/config.php';
 
-    App::bind('config', $config);
+    // App::bind('config', $config);
 
     $asociadoRepository = new AsociadosRepository();
 
@@ -57,4 +58,4 @@ try {
     $asociados = $asociadoRepository->findAll();
 };
 
-require_once 'views/asociados.view.php';
+require_once __DIR__.'/../views/asociados.view.php';

@@ -22,9 +22,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 }
 
 try {
-    $config = require_once 'app/config.php';
+    // $config = require_once 'app/config.php';
 
-    App::bind('config', $config);
+    // App::bind('config', $config);
+
     $mensajeRepository = new MensajeRepository();
 
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -45,4 +46,4 @@ try {
 }
 // Require necesarios para el funcionamiento de la página
 require "utils/utils.php";
-require "views/contact.view.php";
+require __DIR__."/../views/contact.view.php";

@@ -1,7 +1,7 @@
 <?php
 // Llama a la clase FileException y const.php que es donde se almacenan los mensajes de los errores
 require 'exceptions/FileException.class.php';
-require 'utils/const.php';
+require_once 'utils/const.php';
 // Mesajes de algunos errores
 const ERROR_NO_SELECCIONADO = "Debes seleccionar un fichero";
 const ERROR_MEDIANTE_FORMULARIO = "El archivo no se ha subido mediante el formulario";

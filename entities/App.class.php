@@ -1,6 +1,7 @@
 <?php
 // Requires necesarios para el funcionamiento de la clase
 require_once 'exceptions/AppException.class.php';
+require_once 'entities/connection.class.php';
 require_once 'utils/const.php';
 class App
 {

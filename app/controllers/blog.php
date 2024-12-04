@@ -1,4 +1,4 @@
 <?php
 // Require para el funcionamiento de la página Blog
 require "utils/utils.php";
-require "views/blog.view.php";
+require __DIR__."/../views/blog.view.php";
