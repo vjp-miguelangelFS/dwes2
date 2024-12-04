@@ -21,7 +21,7 @@
         <li class="<?php if (esOpcionMenuActiva('/about')) echo 'active' ?> lien"><a href="about"><i class="fa fa-bookmark sr-icons"></i> About</a></li>
         <li class="<?php if (esOpcionMenuActivaEnArray('/blog', '/post')) echo 'active' ?> lien"><a href="blog"><i class="fa fa-file-text sr-icons"></i> Blog</a></li>
         <li class="<?php if (esOpcionMenuActiva('/contact')) echo 'active' ?> lien"><a href="contact"><i class="fa fa-phone-square sr-icons"></i> Contact</a></li>
-        <li class="<?php if (esOpcionMenuActiva('/galeria')) echo 'active' ?> lien"><a href="galeria"><i class="fa fa-image sr-icons"></i> Galeria</a></li>
+        <li class="<?php if (esOpcionMenuActiva('/imagenes-galeria')) echo 'active' ?> lien"><a href="imagenes-galeria"><i class="fa fa-image sr-icons"></i> Galeria</a></li>
         <li class="<?php if (esOpcionMenuActiva('/asociados')) echo 'active' ?>"><a href="asociados"><i class="fa fa-hand-o-right sr-icons"></i> Asociados</a></li>
       </ul>
     </div>
