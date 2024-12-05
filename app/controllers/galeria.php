@@ -13,7 +13,6 @@ require_once 'entities/Categoria.class.php';
 // Variable que se necesitan para añadir una imagen a la base de datos y errores para almacenar algun error
 $errores = [];
 $descripcion = '';
-$mensaje = '';
 try {
 
     $imagenRepository = new ImagenGaleriaRepository();
