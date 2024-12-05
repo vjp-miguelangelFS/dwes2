@@ -12,4 +12,4 @@ App::bind('config', $config);
 $router = Router::load('app/routes.php');
 App::bind('router', $router);
 
-App::bind('logger',new MyLog('logs/proyecto.log'));
+App::bind('logger', new MyLog('logs/proyecto.log'));

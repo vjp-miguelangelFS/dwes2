@@ -10,5 +10,4 @@ class MyLog
             new Monolog\Handler\StreamHandler($filename, Monolog\Level::Info)
         );
     }
-    
 }
