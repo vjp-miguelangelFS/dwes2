@@ -19,26 +19,6 @@ try {
     $imagenRepository = new ImagenGaleriaRepository();
     $categoriaRepository = new CategoriaRepository();
 
-    // Este if se llevara a cabo cuado quiera añadir una imagen a la base de datos
-    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-        // Consigo las dotos de los POST
-        $descripcion = trim(htmlspecialchars($_POST['descripcion']));
-        $categoria = trim(htmlspecialchars($_POST['categoria']));
-
-        $tipoAceptados = ['image/jpeg', 'image/jpg', 'image/gif', 'image/png'];
-
-        $imagen = new File('imagen', $tipoAceptados);
-
-        $imagen->saveUploadFile(ImagenGaleria::RUTA_IMAGENES_GALLERY);
-        // Si ocurre la función saveUploadFile es porque la imagen se ha subido correctamente
-        $imagen->copyFile(ImagenGaleria::RUTA_IMAGENES_GALLERY, ImagenGaleria::RUTA_IMAGENES_PORTAFOLIO);
-
-        // Guarda la imagen en la base de datos
-        $imagenGaleria = new ImagenGaleria($imagen->getFileName(), $descripcion, $categoria);
-        $imagenRepository->save($imagenGaleria);
-        $descripcion = '';
-        $mensaje = 'Imagen guardada';
-    }
     // Almaceno los errores en el array $errorres y en caso de que no ocurra ningun error se llevara a cabo el finally
 } catch (FileException $exception) {
     $errores[] = $exception->getMessage();
