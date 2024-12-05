@@ -25,6 +25,10 @@ try {
 
     $imagenGaleria = new ImagenGaleria($imagen->getFileName(), $descripcion, $categoria);
     $imagenRepository->save($imagenGaleria);
+
+    $mensaje = 'Se ha guardado una nueva imagen: ' . $imagenGaleria->getNombre();
+    // App::get('logger')->log->Info($mensaje);
+
 } catch (FileException $exception) {
     die($exception->getMessage());
 } catch (QuerryException $exception) {

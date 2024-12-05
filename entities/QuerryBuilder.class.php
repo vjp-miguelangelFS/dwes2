@@ -5,6 +5,7 @@ require_once 'exceptions/querryException.class.php';
 require_once 'entities/App.class.php';
 require_once 'Categoria.class.php';
 // Clase abstracta QuerryBuilder
+// Clase abstracta QuerryBuilder
 abstract class QuerryBuilder
 {
     // Variables necesarias para el funcionamiento de la clase
@@ -26,9 +27,9 @@ abstract class QuerryBuilder
         $this->table = $table;
         $this->classEntity = $classEntity;
     }
+
     /**
-     * Retorna tadas la columnas de una base de datos utilizando la sencia MySQL SELECT * FROM "tabla"
-     * y realizando una conexión con la base de datos con ayuda de la clase Connection
+     * Retorna todas las columnas de una base de datos utilizando la sentencia MySQL SELECT * FROM "tabla"
      *
      * @return array
      */
@@ -44,9 +45,9 @@ abstract class QuerryBuilder
 
         return $pdoStatement->fetchAll(PDO::FETCH_CLASS | PDO::FETCH_PROPS_LATE, $this->classEntity);
     }
+
     /**
-     * Inserta un dato a una base de datos utilizando la sentencia MySQL insert into tabla (campos necsarios) values (valores de los campos)' ,
-     * y realiza una conexión can la base de datos utilizando la clase Connection
+     * Inserta un dato a una base de datos y gestiona la transacción.
      *
      * @param IEntity $entity
      * @return void
@@ -54,28 +55,40 @@ abstract class QuerryBuilder
     public function save(IEntity $entity): void
     {
         try {
+            // Comienza una transacción globalmente (en el método save)
+            $this->connection->beginTransaction();
+
+            // Convierte la entidad a un array de parámetros
             $parameters = $entity->toArray();
 
+            // Prepara la sentencia SQL para insertar
             $sql = sprintf(
-                'insert into %s (%s) values (%s)',
+                'INSERT INTO %s (%s) VALUES (%s)',
                 $this->table,
                 implode(', ', array_keys($parameters)),
                 ':' . implode(',:', array_keys($parameters))
             );
 
+            // Prepara y ejecuta la sentencia
             $statement = $this->connection->prepare($sql);
             $statement->execute($parameters);
 
-            if ($entity instanceof ImagenGaleria) { //Si es una imagen lo que estamos insertando en la tabla incrementa el número de imágenes correspondientes en la tabla categoria
+            // Si es una imagen, incrementa el número de imágenes en la categoría
+            if ($entity instanceof ImagenGaleria) {
                 $this->incrementaNumCategoria($entity->getCategoria());
             }
+
+            // Si todo ha ido bien, realiza el commit de la transacción
+            $this->connection->commit();
         } catch (PDOException $exception) {
+            // Si ocurre un error, realiza el rollback
+            $this->connection->rollBack();
             throw new QuerryException(ERROR_STRINGS[ERROR_INSERT_BD]);
         }
     }
+
     /**
-     * Aumenta el Num de datos almacenas en una categoria utilzando la sentencia MySQL "UPDATE categorias SET numImagenes=numImagenes+1 WHERE id = $categoria",
-     * y realiza una conexión con la base de datos con la clase Connection
+     * Aumenta el número de imágenes almacenadas en una categoría.
      *
      * @param integer $categoria
      * @return void
@@ -83,10 +96,12 @@ abstract class QuerryBuilder
     public function incrementaNumCategoria(int $categoria)
     {
         try {
-            $this->connection->beginTransaction();
-            $sql = "UPDATE categorias SET numImagenes=numImagenes+1 WHERE id = $categoria";
-            $this->connection->exec($sql);
-            $this->connection->commit();
+            // Realiza la operación sin abrir una nueva transacción
+            $sql = "UPDATE categorias SET numImagenes = numImagenes + 1 WHERE id = :categoria";
+            $statement = $this->connection->prepare($sql);
+            $statement->execute([':categoria' => $categoria]);
+
+            // No hace falta un commit porque ya estamos dentro de una transacción activa
         } catch (Exception $exception) {
             throw new Exception($exception->getMessage());
         }
