@@ -8,18 +8,13 @@ require_once 'entities/QuerryBuilder.class.php';
 require_once 'exceptions/AppException.class.php';
 require_once 'repository/ImagenGalariaRepository.class.php';
 require_once 'repository/categoriaRepository.class.php';
+require_once 'entities/Categoria.class.php';
 
 // Variable que se necesitan para añadir una imagen a la base de datos y errores para almacenar algun error
 $errores = [];
 $descripcion = '';
 $mensaje = '';
 try {
-    // Creo la conexión con la base de datos y
-    // creo los obejtos necesarios para poder conseguir las imagenes y las categorias de la bsae de datos
-
-    // $config = require_once 'app/config.php';
-
-    // App::bind('config', $config);
 
     $imagenRepository = new ImagenGaleriaRepository();
     $categoriaRepository = new CategoriaRepository();
