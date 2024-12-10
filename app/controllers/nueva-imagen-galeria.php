@@ -9,8 +9,6 @@ require_once 'repository/ImagenGalariaRepository.class.php';
 require_once 'repository/categoriaRepository.class.php';
 require_once 'entities/Categoria.class.php';
 
-$descripcion = '';
-
 try {
     $imagenRepository = new ImagenGaleriaRepository();
 
