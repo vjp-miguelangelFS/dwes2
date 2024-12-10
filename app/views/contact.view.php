@@ -36,7 +36,7 @@
 			}
 			?>
 
-			<form class="form-horizontal" method="post" action=<?php $_SERVER['PHP_SELF'] ?>>
+			<form class="form-horizontal" method="post" action='mensaje/nuevo'>
 				<div class="form-group">
 					<div class="col-xs-6">
 						<label class="label-control" for="firstName">First Name</label>
