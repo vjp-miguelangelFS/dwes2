@@ -1,12 +1,18 @@
 <?php
 // Require necesarios
-require_once 'utils/utils.php';
-require_once 'entities/File.class.php';
-require_once 'entities/Asociados.class.php';
-require_once 'entities/connection.class.php';
-require_once 'entities/QuerryBuilder.class.php';
-require_once 'exceptions/AppException.class.php';
-require_once 'repository/asociadosRepository.class.php';
+// require_once 'utils/utils.php';
+// require_once 'entities/File.class.php';
+// require_once 'entities/Asociados.class.php';
+// require_once 'entities/connection.class.php';
+// require_once 'entities/QuerryBuilder.class.php';
+// require_once 'exceptions/AppException.class.php';
+// require_once 'repository/asociadosRepository.class.php';
+
+use proyecto\repository\AsociadosRepository;
+use proyecto\entities\File;
+use proyecto\entities\Asociados;
+use proyecto\exceptions\FileException;
+use proyecto\exceptions\QuerryException;
 
 // Variables necesarios para poder añadir un asociado a la base de datos y un array de errores
 $errores = [];

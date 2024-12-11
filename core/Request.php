@@ -1,4 +1,7 @@
 <?php
+
+namespace proyecto\core;
+
 class Request
 {
     public static function uri()

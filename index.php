@@ -1,4 +1,9 @@
 <?php
+
+use proyecto\core\Router;
+use proyecto\exceptions\NotFoundException;
+use proyecto\core\Request;
+
 require 'core/bootstrap.php';
 
 try {

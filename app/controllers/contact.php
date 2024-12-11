@@ -1,7 +1,9 @@
 <?php
-require_once 'repository/mensajeRepository.class.php';
-require_once 'entities/Mensaje.class.php';
-require_once 'entities/connection.class.php';
+// require_once 'repository/mensajeRepository.class.php';
+// require_once 'entities/Mensaje.class.php';
+// require_once 'entities/connection.class.php';
+use proyecto\repository\MensajeRepository;
+use proyecto\entities\Mensaje;
 // Codigo necesario para validar la información de la pagina contact
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Array de errores en el cual se almacenaras todos los errores que ocurran
@@ -46,4 +48,4 @@ try {
 }
 // Require necesarios para el funcionamiento de la página
 require "utils/utils.php";
-require __DIR__."/../views/contact.view.php";
+require __DIR__ . "/../views/contact.view.php";

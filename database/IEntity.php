@@ -1,4 +1,6 @@
 <?php
+
+namespace proyecto\database;
 // Interfaz con la función toArray
 interface IEntity
 {

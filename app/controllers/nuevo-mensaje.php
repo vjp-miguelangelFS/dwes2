@@ -1,7 +1,12 @@
 <?php
-require_once 'repository/mensajeRepository.class.php';
-require_once 'entities/Mensaje.class.php';
-require_once 'entities/connection.class.php';
+// require_once 'repository/mensajeRepository.class.php';
+// require_once 'entities/Mensaje.class.php';
+// require_once 'entities/connection.class.php';
+
+use proyecto\repository\MensajeRepository;
+use proyecto\entities\Mensaje;
+use proyecto\exceptions\FileException;
+use proyecto\exceptions\QuerryException;
 
 try {
 

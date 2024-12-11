@@ -1,4 +1,9 @@
 <?php
+
+namespace proyecto\repository;
+
+use Monolog;
+
 class MyLog
 {
     private $log;

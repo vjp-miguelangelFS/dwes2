@@ -1,5 +1,11 @@
 {
     "require": {
-        "monolog/monolog": "^3.8"
+        "monolog/monolog": "^3.8",
+        "ext-pdo": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "proyecto\\": ""
+        }
     }
 }

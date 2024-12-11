@@ -1,10 +1,18 @@
 <?php
 // Requires necesarios para el funcionamiento de la clase QuerryBuilder
-require_once 'utils/const.php';
-require_once 'exceptions/querryException.class.php';
-require_once 'entities/App.class.php';
-require_once 'Categoria.class.php';
-// Clase abstracta QuerryBuilder
+namespace proyecto\entities;
+
+use proyecto\exceptions\QuerryException;
+use proyecto\entities\App;
+use proyecto\database\IEntity;
+use PDO;
+use PDOException;
+use Exception;
+// require_once 'utils/const.php';
+// require_once 'exceptions/querryException.class.php';
+// require_once 'entities/App.class.php';
+// require_once 'Categoria.class.php';
+
 // Clase abstracta QuerryBuilder
 abstract class QuerryBuilder
 {

@@ -1,5 +1,8 @@
 <?php
 // Clase que controla las excepciones File
+namespace proyecto\exceptions;
+
+use Exception;
 
 class FileException extends Exception
 {

@@ -1,6 +1,10 @@
 <?php
 // Llamo a la interfaz IEntity
-require_once 'database/IEntity.class.php';
+namespace proyecto\entities;
+
+use proyecto\database\IEntity;
+// require_once 'database/IEntity.class.php';
+
 // Clase Asociados que implementa la interfaz IEntity
 class Asociados implements IEntity
 {

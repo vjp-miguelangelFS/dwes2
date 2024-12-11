@@ -1,5 +1,7 @@
 <?php
 
+namespace proyecto\utils;
+
 /**
  * Compruebo si el URI de la pagina web coincide con el String pasado por paramentro
  *

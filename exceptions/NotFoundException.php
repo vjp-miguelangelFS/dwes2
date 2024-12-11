@@ -1,5 +1,8 @@
 <?php
 // Clase que controla las excepciones App
+namespace proyecto\exceptions;
+
+use Exception;
 
 class NotFoundException extends Exception
 {

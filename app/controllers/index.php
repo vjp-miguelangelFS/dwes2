@@ -1,13 +1,16 @@
 <?php
 // Require necesarios para el funcionamiento de la pagina
-require_once "utils/utils.php";
-require_once "entities/ImagenGaleria.class.php";
-require_once "entities/Asociados.class.php";
+// require_once "utils/utils.php";
+// require_once "entities/ImagenGaleria.class.php";
+// require_once "entities/Asociados.class.php";
 
-require_once 'repository/ImagenGalariaRepository.class.php';
-require_once 'repository/asociadosRepository.class.php';
-require_once 'entities/connection.class.php';
+// require_once 'repository/ImagenGalariaRepository.class.php';
+// require_once 'repository/asociadosRepository.class.php';
+// require_once 'entities/connection.class.php';
 
+use proyecto\repository\ImagenGalariaRepository;
+use proyecto\repository\AsociadosRepository;
+use proyecto\entities\App;
 
 // Lo necesario para poder almacenar las imagenes del servidor en la variable $arrayImagenesRepository
 try {
@@ -16,7 +19,7 @@ try {
     // $config = require_once 'app/config.php';
     // App::bind('config', $config);
 
-    $imagenRepositorio = new ImagenGaleriaRepository();
+    $imagenRepositorio = new ImagenGalariaRepository();
 } catch (Exception $error) {
     throw $error;
 } finally {
@@ -57,4 +60,4 @@ if (count($arrayAsociados) == 0) {
 }
 
 // Llamo a index view
-require __DIR__."/../views/index.view.php";
+require __DIR__ . "/../views/index.view.php";
