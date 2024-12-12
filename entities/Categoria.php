@@ -1,9 +1,8 @@
 <?php
-// Llamo a la interfaz IEntity
+
 namespace proyecto\entities;
 
 use proyecto\database\IEntity;
-// require_once 'database/IEntity.class.php';
 
 // Clase Categoria que implementa la interfaz IEntity
 class Categoria implements IEntity

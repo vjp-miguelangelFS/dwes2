@@ -1,10 +1,9 @@
 <?php
-// Llamo a la clase abstracta QuerryBuilder
+
 namespace proyecto\repository;
 
 use proyecto\entities\Asociados;
 use proyecto\entities\QuerryBuilder;
-// require_once 'entities/QuerryBuilder.class.php';
 
 // Clase AsociadosRepository con un extends a QuerryBuilder
 class AsociadosRepository extends QuerryBuilder

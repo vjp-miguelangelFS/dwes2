@@ -1,12 +1,10 @@
 <?php
-// Llamo a la clase App y al fichero const.php que almacena los mensajes de los errores
-// require_once 'entities/App.class.php';
+
 namespace proyecto\entities;
 
 use PDO;
 use PDOException;
 use proyecto\exceptions\AppException;
-// require_once 'utils/const.php';
 
 // Clase Connection
 class Connection

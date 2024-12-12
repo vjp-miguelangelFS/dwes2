@@ -1,7 +1,5 @@
 <?php
-// require_once 'repository/mensajeRepository.class.php';
-// require_once 'entities/Mensaje.class.php';
-// require_once 'entities/connection.class.php';
+
 use proyecto\repository\MensajeRepository;
 use proyecto\entities\Mensaje;
 // Codigo necesario para validar la información de la pagina contact

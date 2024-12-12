@@ -3,7 +3,6 @@
 namespace proyecto\entities;
 
 use proyecto\database\IEntity;
-// require_once 'database/IEntity.class.php';
 
 class Mensaje implements IEntity
 {

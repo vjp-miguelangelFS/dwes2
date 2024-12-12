@@ -1,10 +1,8 @@
 <?php
-// Llama a la clase FileException y const.php que es donde se almacenan los mensajes de los errores
+
 namespace proyecto\entities;
 
 use proyecto\exceptions\FileException;
-// require 'exceptions/FileException.class.php';
-// require_once 'utils/const.php';
 
 // Mesajes de algunos errores
 const ERROR_NO_SELECCIONADO = "Debes seleccionar un fichero";

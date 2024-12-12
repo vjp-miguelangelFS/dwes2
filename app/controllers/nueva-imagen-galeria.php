@@ -1,14 +1,5 @@
 <?php
 
-// require_once 'utils/utils.php';
-// require_once 'entities/File.class.php';
-// require_once 'entities/ImagenGaleria.class.php';
-// require_once 'entities/connection.class.php';
-// require_once 'entities/QuerryBuilder.class.php';
-// require_once 'repository/ImagenGalariaRepository.class.php';
-// require_once 'repository/categoriaRepository.class.php';
-// require_once 'entities/Categoria.class.php';
-
 use proyecto\repository\ImagenGalariaRepository;
 use proyecto\entities\File;
 use proyecto\entities\ImagenGaleria;

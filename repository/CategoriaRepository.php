@@ -1,10 +1,9 @@
 <?php
-// Llamo a la clase abstracta QuerryBuilder
+
 namespace proyecto\repository;
 
 use proyecto\entities\Categoria;
 use proyecto\entities\QuerryBuilder;
-// require_once 'entities/QuerryBuilder.class.php';
 
 // Clase CategoriaRepository con un extends a QuerryBuilder
 class CategoriaRepository extends QuerryBuilder
