@@ -1,7 +1,9 @@
 <!-- Partial con el apartado de los asociados -->
 <?php
 
-use proyecto\utils; ?>
+use proyecto\utils\Utils;
+
+?>
 <div class="last-box row">
     <div class="col-xs-12 col-sm-4 col-sm-push-4 last-block">
         <div class="partner-box text-center">
@@ -22,7 +24,7 @@ use proyecto\utils; ?>
                         $arrayMostrarPartner = $arrayPartners;
                     } else {
                         if (count($arrayPartners) > 3) {
-                            $arrayMostrarPartner = utils\extraerTresAsociados($arrayPartners);
+                            $arrayMostrarPartner = Utils::extraerTresAsociados($arrayPartners);
                         }
                     }
                     // Muestro por pantalla los Asociados
