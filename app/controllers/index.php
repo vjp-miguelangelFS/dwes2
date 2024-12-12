@@ -30,7 +30,7 @@ if (count($arrayImagenesRepository) == 0) {
 try {
     $arrayVacioAsociados = false;
 
-    $config = require_once 'app/config.php';
+    $config = require_once 'app/config.php'; 
     App::bind('config', $config);
     $asociados = new AsociadosRepository();
 } catch (Exception $error) {
