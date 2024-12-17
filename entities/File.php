@@ -3,6 +3,7 @@
 namespace proyecto\entities;
 
 use proyecto\exceptions\FileException;
+use proyecto\utils;
 
 // Mesajes de algunos errores
 const ERROR_NO_SELECCIONADO = "Debes seleccionar un fichero";
@@ -32,7 +33,7 @@ class File
             throw new FileException(ERROR_NO_SELECCIONADO);
         }
         if ($this->file['error'] !== UPLOAD_ERR_OK) {
-            throw new FileException(getErrorString($this->file['error']));
+            throw new FileException(utils\getErrorString($this->file['error']));
         }
 
         if (in_array($this->file['type'], $arrTypes) === false) {

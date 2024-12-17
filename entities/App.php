@@ -4,7 +4,7 @@ namespace proyecto\entities;
 
 use proyecto\exceptions\AppException;
 use proyecto\entities\Connection;
-
+use proyecto\utils;
 class App
 {
 

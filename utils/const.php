@@ -1,4 +1,7 @@
 <?php
+
+namespace proyecto\utils;
+
 // Fichero en el cual almaceno los mensajes de errores del proyecto
 define('ERROR_MV_UP_FILE', 9);
 define('ERROR_EXECUTE_STATEMENT', 10);
