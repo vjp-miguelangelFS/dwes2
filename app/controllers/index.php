@@ -50,7 +50,7 @@ if (count($arrayAsociados) == 0) {
     }
 }
 
-$mail = new MyMail();
+// $mail = new MyMail();
 // $mail->__construct();
 // $mail->send('Hola', 'pruebamiguel174@gmail.com', 'Proyecto DWES', 'Prueba mail proyecto');
 // Llamo a index view
