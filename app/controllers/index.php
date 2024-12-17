@@ -4,6 +4,7 @@
 use proyecto\repository\ImagenGalariaRepository;
 use proyecto\repository\AsociadosRepository;
 use proyecto\entities\App;
+use proyecto\repository\MyMail;
 
 // Lo necesario para poder almacenar las imagenes del servidor en la variable $arrayImagenesRepository
 try {
@@ -30,7 +31,7 @@ if (count($arrayImagenesRepository) == 0) {
 try {
     $arrayVacioAsociados = false;
 
-    $config = require_once 'app/config.php'; 
+    $config = require_once 'app/config.php';
     App::bind('config', $config);
     $asociados = new AsociadosRepository();
 } catch (Exception $error) {
@@ -49,5 +50,8 @@ if (count($arrayAsociados) == 0) {
     }
 }
 
+$mail = new MyMail();
+// $mail->__construct();
+// $mail->send('Hola', 'pruebamiguel174@gmail.com', 'Proyecto DWES', 'Prueba mail proyecto');
 // Llamo a index view
 require __DIR__ . "/../views/index.view.php";

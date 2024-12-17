@@ -12,5 +12,14 @@ return [
             PDO::ATTR_PERSISTENT => true,
             PDO::ATTR_AUTOCOMMIT => false
         ]
+    ],
+    'swiftmail' => [
+        "smtp_server" => "smtp.gmail.com",
+        "smtp_port" => "587",
+        "smtp_security" => "tls",
+        "username" => "pruebamiguel174@gmail.com",
+        "password" => "19102004ab",
+        "email" => "pruebamiguel174@gmail.com",
+        "name" => "Proyecto DWES"
     ]
 ];
