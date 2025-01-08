@@ -2,10 +2,10 @@
 
 namespace proyecto\repository;
 
-use proyecto\entities\App;
 use Swift_Mailer;
 use Swift_Message;
 use Swift_SmtpTransport;
+use proyecto\entities\App;
 
 class MyMail
 {
@@ -14,6 +14,8 @@ class MyMail
     public function __construct()
     {
         $config = App::get('config')['swiftmail'];
+        print_r($config);
+        
         $transport = new Swift_SmtpTransport(
             $config['smtp_server'],
             $config['smtp_port'],

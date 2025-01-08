@@ -20,6 +20,7 @@ class Connection
         try {
             $config = App::get('config')['database'];
 
+            // print_r($config);
             // Construye la cadena de conexión y la usa para establecer la conexión
             $connection = new PDO(
                 $config['connection'] . ';dbname=' . $config['name'],
